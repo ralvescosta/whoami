@@ -14,8 +14,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/avatar.jpg" />
 
-    <!-- Minimal inline favicon (dot) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23000'/></svg>">
+    <!-- Avatar favicon (centered) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100'><defs><clipPath id='circle'><circle cx='50' cy='50' r='50'/></clipPath></defs><image href='assets/avatar.jpg' x='0' y='0' width='100' height='100' preserveAspectRatio='xMidYMid slice' clip-path='url(%23circle)'/></svg>">
 
     <style>
       :root{
@@ -158,6 +158,20 @@
         font-weight: bold;
       }
 
+      .chip-distributed-systems:hover{
+        background: #8B5CF6;
+        border-color: #8B5CF6;
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      .chip-observability:hover{
+        background: #14B8A6;
+        border-color: #14B8A6;
+        color: #ffffff;
+        font-weight: bold;
+      }
+
       .links{
         margin-top: 22px;
         display: flex;
@@ -226,8 +240,8 @@
           <span class="chip chip-rust">Rust</span>
           <span class="chip chip-kubernetes">Kubernetes</span>
           <span class="chip chip-aws">AWS</span>
-          <span class="chip">Distributed Systems</span>
-          <span class="chip">Observability</span>
+          <span class="chip chip-distributed-systems">Distributed Systems</span>
+          <span class="chip chip-observability">Observability</span>
         </div>
 
         <div class="sep"></div>
