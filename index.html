@@ -80,9 +80,13 @@
         height: 92px;
         border-radius: 999px;
         object-fit: cover;
+        object-position: 50% 25%; /* 👈 key line */
         border: 1px solid var(--panel-border);
         background: rgba(255,255,255,.06);
-      }
+          box-shadow:
+          0 0 0 2px rgba(255,255,255,.08),
+          0 8px 20px rgba(0,0,0,.35);
+}
 
       h1{
         font-size: 28px;
