@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+
+    <title>Rafael Costa</title>
+    <meta name="description" content="Senior Software Engineer (Backend) — Go, Rust, Kubernetes, AWS." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Rafael Costa" />
+    <meta property="og:description" content="Senior Software Engineer (Backend) — Go, Rust, Kubernetes, AWS." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/avatar.jpg" />
+
+    <!-- Minimal inline favicon (dot) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23000'/></svg>">
+
+    <style>
+      :root{
+        --bg: #0b0c0f;
+        --panel: rgba(255,255,255,.06);
+        --panel-border: rgba(255,255,255,.10);
+        --text: rgba(255,255,255,.92);
+        --muted: rgba(255,255,255,.72);
+        --muted2: rgba(255,255,255,.58);
+        --shadow: 0 20px 60px rgba(0,0,0,.35);
+        --radius: 18px;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root{
+          --bg: #f7f7fb;
+          --panel: rgba(0,0,0,.04);
+          --panel-border: rgba(0,0,0,.08);
+          --text: rgba(0,0,0,.88);
+          --muted: rgba(0,0,0,.64);
+          --muted2: rgba(0,0,0,.52);
+          --shadow: 0 18px 50px rgba(0,0,0,.10);
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body{
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(1200px 700px at 20% 10%, rgba(120, 120, 255, .16), transparent 55%),
+                    radial-gradient(900px 600px at 80% 20%, rgba(255, 120, 200, .12), transparent 55%),
+                    radial-gradient(900px 700px at 40% 90%, rgba(120, 255, 210, .10), transparent 60%),
+                    var(--bg);
+        display: grid;
+        place-items: center;
+        padding: 32px 18px;
+      }
+
+      main{
+        width: min(720px, 100%);
+      }
+
+      .card{
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 28px;
+        backdrop-filter: blur(10px);
+      }
+
+      .top{
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .avatar{
+        width: 92px;
+        height: 92px;
+        border-radius: 999px;
+        object-fit: cover;
+        border: 1px solid var(--panel-border);
+        background: rgba(255,255,255,.06);
+      }
+
+      h1{
+        font-size: 28px;
+        line-height: 1.15;
+        margin: 0;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle{
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 14.5px;
+      }
+
+      .bio{
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 15.5px;
+        line-height: 1.6;
+        max-width: 62ch;
+      }
+
+      .chips{
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .chip{
+        font-size: 13px;
+        color: var(--muted2);
+        border: 1px solid var(--panel-border);
+        background: rgba(255,255,255,.04);
+        padding: 8px 10px;
+        border-radius: 999px;
+        user-select: none;
+        transition: transform .08s ease, background .15s ease, border-color .15s ease, color .15s ease;
+      }
+
+      .chip:hover{
+        transform: translateY(-1px);
+        background: rgba(255,255,255,.10);
+        border-color: rgba(255,255,255,.16);
+      }
+
+      .chip-golang:hover{
+        background: #00ADD8;
+        border-color: #00ADD8;
+        color: #ffffff;
+      }
+
+      .chip-rust:hover{
+        background: #CE412B;
+        border-color: #CE412B;
+        color: #ffffff;
+      }
+
+      .chip-kubernetes:hover{
+        background: #326CE5;
+        border-color: #326CE5;
+        color: #ffffff;
+      }
+
+      .chip-aws:hover{
+        background: #FF9900;
+        border-color: #FF9900;
+        color: #ffffff;
+      }
+
+      .links{
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      a.btn{
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--panel-border);
+        background: rgba(255,255,255,.06);
+        color: var(--text);
+        text-decoration: none;
+        transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      }
+
+      a.btn:hover{
+        transform: translateY(-1px);
+        background: rgba(255,255,255,.10);
+        border-color: rgba(255,255,255,.16);
+      }
+
+      .icon{
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+      }
+
+      footer{
+        margin-top: 14px;
+        text-align: center;
+        color: var(--muted2);
+        font-size: 12.5px;
+      }
+
+      .sep{
+        height: 1px;
+        background: var(--panel-border);
+        margin: 18px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section class="card">
+        <div class="top">
+          <img class="avatar" src="assets/avatar.jpg" alt="Portrait of Rafael Costa" />
+          <div>
+            <h1>Rafael Costa</h1>
+            <div class="subtitle">Senior Software Engineer · Backend</div>
+          </div>
+        </div>
+
+        <p class="bio">
+          Senior Software Engineer with <strong>8 years</strong> of experience, focused on backend systems.
+          Specialized in <strong>Golang</strong>, <strong>Rust</strong>, <strong>Kubernetes</strong>, and <strong>AWS</strong>.
+        </p>
+
+        <div class="chips" aria-label="Skills">
+          <span class="chip chip-golang">Golang</span>
+          <span class="chip chip-rust">Rust</span>
+          <span class="chip chip-kubernetes">Kubernetes</span>
+          <span class="chip chip-aws">AWS</span>
+          <span class="chip">Distributed Systems</span>
+          <span class="chip">Observability</span>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="links" aria-label="Links">
+          <a class="btn" href="https://github.com/ralvescosta" target="_blank" rel="noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5C5.73.5.75 5.65.75 12.06c0 5.11 3.3 9.44 7.88 10.97.58.11.79-.26.79-.57v-2.1c-3.2.72-3.87-1.4-3.87-1.4-.52-1.35-1.27-1.7-1.27-1.7-1.04-.72.08-.71.08-.71 1.15.08 1.76 1.2 1.76 1.2 1.02 1.8 2.67 1.28 3.32.98.1-.76.4-1.28.72-1.58-2.56-.3-5.26-1.31-5.26-5.85 0-1.29.45-2.35 1.2-3.18-.12-.3-.52-1.52.11-3.18 0 0 .98-.32 3.2 1.2.92-.26 1.91-.39 2.9-.4.98.01 1.98.14 2.9.4 2.22-1.52 3.2-1.2 3.2-1.2.63 1.66.23 2.88.11 3.18.75.83 1.2 1.89 1.2 3.18 0 4.55-2.7 5.55-5.28 5.84.41.37.78 1.1.78 2.22v3.3c0 .31.21.68.8.57 4.57-1.53 7.86-5.86 7.86-10.97C23.25 5.65 18.27.5 12 .5z"/>
+            </svg>
+            GitHub
+          </a>
+
+          <a class="btn" href="https://www.linkedin.com/in/ralvescosta/" target="_blank" rel="noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.64 0 4.31 2.4 4.31 5.52v6.22zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/>
+            </svg>
+            LinkedIn
+          </a>
+
+          <!-- Optional: add your email -->
+          <!--
+          <a class="btn" href="mailto:you@example.com">
+            <span class="icon" aria-hidden="true">✉️</span>
+            Email
+          </a>
+          -->
+        </div>
+      </section>
+
+      <footer>
+        © <span id="y"></span> Rafael Costa · Built with GitHub Pages
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
